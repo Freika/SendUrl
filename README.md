@@ -2,6 +2,16 @@
 
 SendUrl takes urls of all open tabs in Chrome and sents them to your backend.
 
+# Usage
+
+- Install extension to Chrome
+- Install Sinatra `gem install sinatra`
+- Run Sinatra dummy app `ruby dummy.rb`
+- Open several tabs in Chrome
+- Click on SendUrl extension icon.
+- ...
+- You are beautiful!
+
 ## History
 
 * v0.1 initial release
