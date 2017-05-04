@@ -1,15 +1,14 @@
 {
-  "name": "OpenList",
-  "author": "Chris Dzombak <http://chris.dzombak.name>",
-  "manifest_version": 2,
-  "version": "0.3.4",
-  "description": "Utilities to create and open lists of tabs.",
+  "name": "SendUrl",
+  "author": "Eugene Burmakin <http://frey.su>",
+  "manifest_version": 1,
+  "version": "0.1",
+  "description": "Utilities to send tabs urls to backend.",
   "background": {
     "page": "background.html",
-    // "scripts": ["jquery.js"],
     "persistent": false
   },
-  "homepage_url": "https://github.com/cdzombak/OpenList",
+  "homepage_url": "https://github.com/Freika/SendUrl",
   "permissions": [
     "contextMenus",
     "tabs",
@@ -18,7 +17,7 @@
   ],
   "browser_action": {
     "default_icon":  "icon/icon-48.png",
-    "default_title": "Tab List",
+    "default_title": "Tab Urls",
     "default_popup": "popup.html"
   },
   "icons": {
