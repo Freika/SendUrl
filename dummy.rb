@@ -1,4 +1,5 @@
 require 'sinatra'
+
 post '/' do
-  puts params['url']
+  puts params
 end

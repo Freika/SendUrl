@@ -3,28 +3,33 @@ function initPopup() {
     chrome.tabs.getAllInWindow(window.id, function(tabs){
       if (!tabs.length) return;
 
-      var listTextArea = $('ul#list');
+      list = []
 
       for (var i=0; i < tabs.length; ++i) {
-        sendUrl(tabs[i].url)
+        list.push({
+          title: tabs[i].title,
+          url: tabs[i].url,
+        })
       }
+
+      sendUrl(list)
     });
   });
 }
 
-function sendUrl(url) {
+function sendUrl(list) {
   jQuery.ajax({
-    type: 'POST', //or GET
+    type: 'POST',
     url: 'http://localhost:4567/',
-    data: 'url=' + url,
+    data: {data: list},
     crossDomain: true,
     cache: false,
     async: false,
     success: function(msg){
-      $("ul#list").append('<li class="success">' + url + ' sent!</li>');
+      $("div#list").append('<p class="success">Links are sent!</p>');
     },
     error: function(jxhr){
-      $("ul#list").append('<li class="failure">' + url + ' failed to send!</li>');
+      $("div#list").append('<p class="failed">Links are failed to send!</p>');
     }
   });
 }
